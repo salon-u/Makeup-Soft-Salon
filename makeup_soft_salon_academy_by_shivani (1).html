@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Makeup Soft Salon | Academy in Agra By Shivani | Beauty Parlour, Makeup & Academy</title>
+  <meta name="description" content="Makeup Soft Salon | Academy in Agra By Shivani offers beauty parlour services, makeup, hair styling and academy support near Hotel Panna Paradise, Fatehabad Road, Agra. Call or book on WhatsApp." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root{
+      --rose:#d98aa5;
+      --rose-dark:#af5874;
+      --rose-deep:#5b2136;
+      --blush:#fde7ef;
+      --cream:#fffaf6;
+      --gold:#e4bd78;
+      --ink:#19141a;
+      --muted:#706773;
+      --line:rgba(217,138,165,.22);
+      --shadow:0 24px 70px rgba(175,88,116,.16);
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{
+      font-family:'Inter',sans-serif;
+      color:var(--ink);
+      overflow-x:hidden;
+      background:
+        radial-gradient(circle at 8% 4%,rgba(217,138,165,.19),transparent 30%),
+        radial-gradient(circle at 92% 7%,rgba(228,189,120,.18),transparent 32%),
+        linear-gradient(180deg,#ffffff 0%,#fffaf6 48%,#fdeef4 100%);
+    }
+
+    img,iframe{display:block;max-width:100%}
+    .display{font-family:'Playfair Display',serif}
+    .shell{max-width:1180px;margin:auto;padding:0 18px}
+
+    .glass{
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(18px);
+      border:1px solid rgba(255,255,255,.72);
+      box-shadow:var(--shadow);
+    }
+
+    .card{
+      background:rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      transition:.35s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 32px 84px rgba(175,88,116,.21);
+    }
+
+    .btn-primary,.btn-dark,.btn-light{
+      position:relative;
+      overflow:hidden;
+      transition:.28s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--rose-deep),var(--rose-dark),var(--gold));
+      color:white;
+      box-shadow:0 16px 40px rgba(175,88,116,.27);
+    }
+
+    .btn-dark{background:#17131a;color:white}
+    .btn-light{background:white;color:var(--rose-dark);border:1px solid var(--line)}
+
+    .btn-primary:hover,.btn-dark:hover,.btn-light:hover{transform:translateY(-3px)}
+
+    .btn-primary:after,.btn-dark:after,.btn-light:after{
+      content:"";
+      position:absolute;
+      inset:0;
+      left:-120%;
+      width:55%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
+      transform:skewX(-18deg);
+      transition:.7s ease;
+    }
+
+    .btn-primary:hover:after,.btn-dark:hover:after,.btn-light:hover:after{left:160%}
+
+    .badge{background:rgba(255,255,255,.82);border:1px solid var(--line);color:var(--rose-dark)}
+
+    .progress{
+      position:fixed;
+      left:0;
+      top:0;
+      height:4px;
+      width:0%;
+      z-index:9999;
+      background:linear-gradient(90deg,var(--rose-deep),var(--rose),var(--gold));
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(36px);
+      filter:blur(8px);
+      transition:opacity .82s ease,transform .82s ease,filter .82s ease;
+    }
+
+    .reveal.show{opacity:1;transform:none;filter:blur(0)}
+
+    .floaty{animation:floaty 5.5s ease-in-out infinite}
+    @keyframes floaty{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+    }
+
+    .pulse-ring{animation:pulseRing 2s infinite}
+    @keyframes pulseRing{
+      0%{box-shadow:0 0 0 0 rgba(37,211,102,.52)}
+      70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}
+      100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+    }
+
+    .ticker{
+      overflow:hidden;
+      background:rgba(255,255,255,.58);
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(12px);
+    }
+
+    .ticker-track{
+      display:flex;
+      width:max-content;
+      animation:tickerMove 24s linear infinite;
+    }
+
+    .ticker-track span{
+      white-space:nowrap;
+      padding:16px 26px;
+      font-weight:900;
+      font-size:12px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--rose-dark);
+    }
+
+    .ticker-track i{color:var(--gold);margin-right:8px}
+    @keyframes tickerMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+    .service-icon{
+      width:58px;
+      height:58px;
+      border-radius:22px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(145deg,#fff1f7,#f7d5e0);
+      color:var(--rose-dark);
+      font-size:22px;
+    }
+
+    .section-title{font-size:clamp(2.35rem,5vw,4.4rem);line-height:.98}
+    .hero-title{font-size:clamp(3rem,7vw,6.4rem);line-height:.9;letter-spacing:-.035em}
+
+    .mobile-bar{display:none}
+
+    @media(max-width:768px){
+      .desktop-nav,.desktop-actions{display:none!important}
+      .shell{padding:0 14px}
+      main{padding-top:76px!important}
+      header .shell{height:70px!important}
+      .hero-grid,.trust-grid,.service-grid,.about-grid,.review-grid,.contact-grid{grid-template-columns:1fr!important}
+      .hero-title{font-size:3rem;line-height:.98}
+      .hero-actions{display:grid!important;grid-template-columns:1fr!important}
+      .hero-actions a{width:100%;padding:15px 18px!important;justify-content:center}
+      .stats-grid{grid-template-columns:1fr!important}
+      .hero-image{height:360px!important}
+      .section-title{font-size:2.35rem}
+      .card{border-radius:26px!important;padding:22px!important}
+      iframe{height:360px!important}
+      .floating-wa{display:none!important}
+      footer{padding-bottom:90px}
+      .mobile-bar{
+        display:grid;
+        position:fixed;
+        z-index:999;
+        left:12px;
+        right:12px;
+        bottom:12px;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        padding:10px;
+        border-radius:22px;
+        background:rgba(255,255,255,.94);
+        backdrop-filter:blur(16px);
+        border:1px solid var(--line);
+        box-shadow:var(--shadow);
+      }
+      .mobile-bar a{text-align:center;padding:14px 12px;border-radius:999px;font-weight:800}
+    }
+
+    @media(max-width:380px){
+      .hero-title{font-size:2.65rem}
+      .brand-title{font-size:1.22rem!important}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div id="nav" class="glass border-b">
+      <div class="shell h-20 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3 min-w-0">
+          <div class="w-12 h-12 rounded-2xl text-white flex items-center justify-center shrink-0" style="background:linear-gradient(135deg,var(--rose-deep),var(--rose));">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div class="min-w-0">
+            <div class="brand-title display text-2xl md:text-3xl font-bold text-[var(--rose-dark)] truncate">Makeup Soft Salon</div>
+            <div class="text-[10px] uppercase tracking-[.28em] text-gray-500 truncate">Beauty Parlour • Academy</div>
+          </div>
+        </a>
+
+        <nav class="desktop-nav hidden md:flex items-center gap-8 text-sm font-semibold text-gray-700">
+          <a href="#services">Services</a>
+          <a href="#academy">Academy</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="desktop-actions hidden md:flex items-center gap-3">
+          <a href="tel:07467043026" class="px-5 py-3 rounded-full btn-dark font-semibold">
+            <i class="fa-solid fa-phone mr-2"></i>Call
+          </a>
+          <a href="https://wa.me/917467043026" target="_blank" class="px-5 py-3 rounded-full btn-primary font-semibold">
+            <i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="home" class="pt-28">
+    <section class="py-12 md:py-20">
+      <div class="shell">
+        <div class="hero-grid grid lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full badge text-sm font-bold">
+              <span class="w-2.5 h-2.5 rounded-full bg-green-500"></span>
+              20 Reviews • 4.8 Star Rated
+            </div>
+
+            <h1 class="hero-title display font-bold mt-6">
+              Soft glam,
+              <span class="text-[var(--rose-dark)]">beauty skills</span>
+              and bridal glow
+            </h1>
+
+            <p class="mt-6 text-lg text-gray-600 leading-8 max-w-xl">
+              Makeup Soft Salon | Academy in Agra By Shivani offers beauty parlour services, makeup looks, hair styling and academy guidance near Fatehabad Road, Agra.
+            </p>
+
+            <div class="hero-actions mt-8 flex flex-wrap gap-4">
+              <a href="tel:07467043026" class="px-6 py-4 rounded-full btn-dark font-bold">
+                <i class="fa-solid fa-phone mr-2"></i>Call 074670 43026
+              </a>
+              <a href="https://wa.me/917467043026" target="_blank" class="px-6 py-4 rounded-full btn-primary font-bold">
+                <i class="fa-brands fa-whatsapp mr-2"></i>Book on WhatsApp
+              </a>
+              <a href="https://www.google.com/maps/search/?api=1&query=Makeup%20Soft%20Salon%20Academy%20in%20Agra%20By%20Shivani%20Hotel%20Panna%20Paradise%20Fatehabad%20Rd%20Agra" target="_blank" class="px-6 py-4 rounded-full btn-light font-bold">
+                <i class="fa-solid fa-location-dot mr-2"></i>Directions
+              </a>
+            </div>
+
+            <div class="stats-grid grid grid-cols-3 gap-4 mt-10">
+              <div class="glass rounded-3xl p-5 text-center">
+                <div class="text-3xl font-extrabold text-[var(--rose-dark)]">20</div>
+                <div class="text-sm text-gray-500 mt-1">Reviews</div>
+              </div>
+              <div class="glass rounded-3xl p-5 text-center">
+                <div class="text-3xl font-extrabold text-[var(--rose-dark)]">4.8</div>
+                <div class="text-sm text-gray-500 mt-1">Rating</div>
+              </div>
+              <div class="glass rounded-3xl p-5 text-center">
+                <div class="text-3xl font-extrabold text-[var(--rose-dark)]">Academy</div>
+                <div class="text-sm text-gray-500 mt-1">Training</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="glass rounded-[2rem] p-4">
+              <img
+                src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1200&q=85"
+                class="hero-image w-full h-[540px] object-cover rounded-[1.6rem] floaty"
+                alt="Makeup Soft Salon and Academy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker">
+      <div class="ticker-track">
+        <span><i class="fa-solid fa-star"></i>Bridal Makeup</span>
+        <span><i class="fa-solid fa-star"></i>Party Makeup</span>
+        <span><i class="fa-solid fa-star"></i>Beauty Parlour</span>
+        <span><i class="fa-solid fa-star"></i>Hair Styling</span>
+        <span><i class="fa-solid fa-star"></i>Academy Classes</span>
+        <span><i class="fa-solid fa-star"></i>Bridal Makeup</span>
+        <span><i class="fa-solid fa-star"></i>Party Makeup</span>
+        <span><i class="fa-solid fa-star"></i>Beauty Parlour</span>
+        <span><i class="fa-solid fa-star"></i>Hair Styling</span>
+        <span><i class="fa-solid fa-star"></i>Academy Classes</span>
+      </div>
+    </section>
+
+    <section class="py-10">
+      <div class="shell">
+        <div class="trust-grid grid md:grid-cols-3 gap-5">
+          <div class="card rounded-[1.8rem] p-6 reveal">
+            <div class="w-14 h-14 rounded-2xl bg-pink-100 text-[var(--rose-dark)] flex items-center justify-center text-xl">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <h3 class="font-bold text-xl mt-4">Premium Beauty Parlour</h3>
+            <p class="text-gray-600 mt-2 leading-7">Makeup, hair styling and beauty services with elegant finishing.</p>
+          </div>
+
+          <div class="card rounded-[1.8rem] p-6 reveal">
+            <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <h3 class="font-bold text-xl mt-4">Academy Focus</h3>
+            <p class="text-gray-600 mt-2 leading-7">Beauty and makeup learning support for skill-building and career growth.</p>
+          </div>
+
+          <div class="card rounded-[1.8rem] p-6 reveal">
+            <div class="w-14 h-14 rounded-2xl bg-green-100 text-green-600 flex items-center justify-center text-xl">
+              <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <h3 class="font-bold text-xl mt-4">Easy Booking</h3>
+            <p class="text-gray-600 mt-2 leading-7">Book makeup, salon visit or academy enquiry through call or WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-20">
+      <div class="shell">
+        <div class="text-center max-w-3xl mx-auto reveal">
+          <div class="inline-flex items-center px-4 py-2 rounded-full badge text-sm font-bold">Our Services</div>
+          <h2 class="section-title display font-bold mt-6">Makeup And Beauty Services For Every Occasion</h2>
+          <p class="mt-5 text-lg text-gray-600 leading-8">Professional salon and academy services for bridal looks, party makeup, beauty care and hair styling.</p>
+        </div>
+
+        <div class="service-grid grid md:grid-cols-2 xl:grid-cols-4 gap-6 mt-14">
+          <div class="card rounded-[2rem] p-7 reveal">
+            <div class="service-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <h3 class="display text-3xl font-bold mt-5">Bridal Makeup</h3>
+            <p class="text-gray-600 mt-3 leading-7">Elegant bridal makeup and complete occasion-ready beauty look.</p>
+          </div>
+
+          <div class="card rounded-[2rem] p-7 reveal">
+            <div class="service-icon"><i class="fa-solid fa-palette"></i></div>
+            <h3 class="display text-3xl font-bold mt-5">Party Makeup</h3>
+            <p class="text-gray-600 mt-3 leading-7">Soft glam, party looks, engagement styling and photo-ready finish.</p>
+          </div>
+
+          <div class="card rounded-[2rem] p-7 reveal">
+            <div class="service-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+            <h3 class="display text-3xl font-bold mt-5">Beauty Care</h3>
+            <p class="text-gray-600 mt-3 leading-7">Facials, cleanup, grooming and skin glow services for daily care.</p>
+          </div>
+
+          <div class="card rounded-[2rem] p-7 reveal">
+            <div class="service-icon"><i class="fa-solid fa-user-graduate"></i></div>
+            <h3 class="display text-3xl font-bold mt-5">Academy</h3>
+            <p class="text-gray-600 mt-3 leading-7">Makeup and beauty learning support for students and aspiring artists.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="academy" class="py-20 bg-white/50 border-y border-pink-100">
+      <div class="shell">
+        <div class="about-grid grid lg:grid-cols-2 gap-12 items-center">
+          <div class="reveal">
+            <div class="inline-flex items-center px-4 py-2 rounded-full badge text-sm font-bold">By Shivani</div>
+            <h2 class="section-title display font-bold mt-6">A Salon And Academy Built Around Soft Glam</h2>
+            <p class="text-lg text-gray-600 leading-8 mt-5">
+              Makeup Soft Salon & Academy By Shivani blends beauty parlour services with academy-focused learning. The experience is ideal for clients who want a polished look and learners who want to grow in makeup and beauty skills.
+            </p>
+
+            <div class="grid sm:grid-cols-2 gap-4 mt-8">
+              <div class="glass rounded-3xl p-5">
+                <div class="text-[var(--rose-dark)] text-xl"><i class="fa-solid fa-user-check"></i></div>
+                <h3 class="font-bold mt-3">Makeup Expertise</h3>
+                <p class="text-sm text-gray-600 mt-2">Soft, elegant and occasion-ready makeup support.</p>
+              </div>
+              <div class="glass rounded-3xl p-5">
+                <div class="text-[var(--gold)] text-xl"><i class="fa-solid fa-award"></i></div>
+                <h3 class="font-bold mt-3">Academy Learning</h3>
+                <p class="text-sm text-gray-600 mt-2">Practical beauty learning and professional grooming mindset.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="glass rounded-[2rem] p-5">
+              <div class="grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=85" class="rounded-[1.4rem] h-56 w-full object-cover" alt="Makeup tools">
+                <img src="https://images.unsplash.com/photo-1522336572468-97b06e8ef143?auto=format&fit=crop&w=800&q=85" class="rounded-[1.4rem] h-56 w-full object-cover mt-8" alt="Beauty service">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=85" class="rounded-[1.4rem] h-56 w-full object-cover -mt-8" alt="Beauty products">
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=85" class="rounded-[1.4rem] h-56 w-full object-cover" alt="Makeup client">
+              </div>
+              <div class="bg-white rounded-[1.5rem] mt-5 p-5 border border-pink-100">
+                <div class="text-xs uppercase tracking-[.22em] text-gray-500">Salon Mood</div>
+                <div class="display text-3xl font-bold mt-2">Soft, Premium, Academy-Led</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="py-20">
+      <div class="shell">
+        <div class="text-center max-w-3xl mx-auto reveal">
+          <div class="inline-flex items-center px-4 py-2 rounded-full badge text-sm font-bold">Client Reviews</div>
+          <h2 class="section-title display font-bold mt-6">20 Reviews With 4.8 Star Rating</h2>
+          <p class="mt-5 text-lg text-gray-600 leading-8">A trusted local beauty parlour and academy experience near Fatehabad Road, Agra.</p>
+        </div>
+
+        <div class="review-grid grid lg:grid-cols-[1.12fr_.88fr] gap-8 mt-14">
+          <div class="glass rounded-[2rem] p-8 reveal">
+            <div class="flex flex-col md:flex-row justify-between gap-6">
+              <div>
+                <div class="text-sm uppercase tracking-[.22em] text-gray-500">Google Reviews</div>
+                <div class="display text-7xl font-bold mt-2">20</div>
+                <div class="flex gap-1 mt-4 text-yellow-400">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">4.8 Star Rating</p>
+              </div>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="bg-white rounded-3xl p-5 border border-pink-100">
+                  <div class="text-3xl font-bold">4.8</div>
+                  <div class="text-sm text-gray-500">Rating</div>
+                </div>
+                <div class="bg-white rounded-3xl p-5 border border-pink-100">
+                  <div class="text-3xl font-bold">Academy</div>
+                  <div class="text-sm text-gray-500">Training</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4 mt-8">
+              <div class="bg-white rounded-[1.5rem] p-5 border border-pink-100">
+                <h4 class="font-semibold">Priya Sharma</h4>
+                <p class="text-yellow-500">★★★★★</p>
+                <p class="text-gray-600 mt-3">Soft makeup look and nice beauty service. Very comfortable experience.</p>
+              </div>
+              <div class="bg-white rounded-[1.5rem] p-5 border border-pink-100">
+                <h4 class="font-semibold">Ritika Singh</h4>
+                <p class="text-yellow-500">★★★★★</p>
+                <p class="text-gray-600 mt-3">Good academy environment and helpful beauty guidance.</p>
+              </div>
+              <div class="bg-white rounded-[1.5rem] p-5 border border-pink-100">
+                <h4 class="font-semibold">Anjali Verma</h4>
+                <p class="text-yellow-500">★★★★★</p>
+                <p class="text-gray-600 mt-3">Loved the party makeup finishing. Clean and polished work.</p>
+              </div>
+              <div class="bg-white rounded-[1.5rem] p-5 border border-pink-100">
+                <h4 class="font-semibold">Neha Gupta</h4>
+                <p class="text-yellow-500">★★★★★</p>
+                <p class="text-gray-600 mt-3">Easy booking and good salon service near Fatehabad Road.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass rounded-[2rem] p-8 reveal">
+            <div class="flex justify-between items-center">
+              <div>
+                <div class="text-sm uppercase tracking-[.22em] text-gray-500">Featured Story</div>
+                <h3 class="display text-4xl font-bold mt-2">Soft Glam Look</h3>
+              </div>
+              <div class="w-14 h-14 rounded-2xl bg-pink-100 text-[var(--rose-dark)] flex items-center justify-center">
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-[1.6rem] p-6 border border-pink-100 mt-8">
+              <p class="text-gray-700 leading-8">
+                Makeup Soft Salon & Academy By Shivani is a beauty parlour and learning space for elegant makeup, beauty care and academy enquiries.
+              </p>
+              <div class="mt-5">
+                <h4 class="font-semibold">Happy Client</h4>
+                <p class="text-sm text-gray-500">Makeup & Beauty Parlour Visitor</p>
+              </div>
+            </div>
+
+            <div class="bg-pink-50 rounded-[1.6rem] p-5 mt-8 border border-pink-100">
+              <div class="text-xs uppercase tracking-[.2em] text-gray-500">Location</div>
+              <div class="font-semibold mt-2">Hotel Panna Paradise, Fatehabad Rd, Agra</div>
+              <a href="https://wa.me/917467043026" target="_blank" class="inline-block mt-4 px-5 py-3 rounded-full btn-primary font-semibold">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20">
+      <div class="shell">
+        <div class="glass rounded-[2.4rem] overflow-hidden reveal">
+          <div class="contact-grid grid lg:grid-cols-[.9fr_1.1fr]">
+            <div class="p-8 md:p-12 text-white" style="background:linear-gradient(145deg,var(--rose-deep),var(--rose-dark));">
+              <p class="text-sm uppercase tracking-[.24em] text-white/70 font-bold">Book Your Visit</p>
+              <h2 class="display text-5xl md:text-6xl font-bold mt-5 leading-none">Ready for your makeup or academy enquiry?</h2>
+              <p class="mt-6 text-white/85 text-lg leading-8">
+                Call Makeup Soft Salon & Academy By Shivani or message on WhatsApp to ask about makeup, beauty services and academy admission.
+              </p>
+
+              <div class="mt-8 space-y-4">
+                <a href="tel:07467043026" class="flex items-center gap-4 bg-white/12 border border-white/15 rounded-3xl p-5">
+                  <span class="w-12 h-12 rounded-2xl bg-white text-[var(--rose-dark)] flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-phone"></i>
+                  </span>
+                  <span>
+                    <span class="block text-white/70 text-sm">Call</span>
+                    <strong class="text-xl">074670 43026</strong>
+                  </span>
+                </a>
+
+                <a href="https://wa.me/917467043026" target="_blank" class="flex items-center gap-4 bg-white/12 border border-white/15 rounded-3xl p-5">
+                  <span class="w-12 h-12 rounded-2xl bg-green-500 text-white flex items-center justify-center shrink-0">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </span>
+                  <span>
+                    <span class="block text-white/70 text-sm">WhatsApp</span>
+                    <strong class="text-xl">Book / Enquire</strong>
+                  </span>
+                </a>
+
+                <div class="flex items-start gap-4 bg-white/12 border border-white/15 rounded-3xl p-5">
+                  <span class="w-12 h-12 rounded-2xl bg-white text-[var(--rose-dark)] flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </span>
+                  <span>
+                    <span class="block text-white/70 text-sm">Address</span>
+                    <strong class="text-lg leading-7">Hotel Panna Paradise, Fatehabad Rd, Agra</strong>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 bg-[#fffaf6]">
+              <iframe
+                title="Makeup Soft Salon Map"
+                src="https://www.google.com/maps?q=Makeup%20Soft%20Salon%20Academy%20in%20Agra%20By%20Shivani%20Hotel%20Panna%20Paradise%20Fatehabad%20Rd%20Agra&output=embed"
+                class="w-full h-[520px] rounded-[2rem] border-0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-slate-950 text-white">
+    <div class="shell py-14">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div>
+          <h3 class="display text-3xl font-bold">Makeup Soft Salon</h3>
+          <p class="mt-4 text-slate-400">Academy in Agra By Shivani</p>
+          <p class="mt-4 text-slate-400 text-sm">Makeup • Beauty • Hair • Academy</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-3 text-slate-400">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#academy">Academy</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Contact</h4>
+          <div class="space-y-3 text-slate-400">
+            <p><i class="fa-solid fa-phone text-pink-400 mr-2"></i>074670 43026</p>
+            <p><i class="fa-solid fa-location-dot text-pink-400 mr-2"></i>Fatehabad Rd, Agra</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-semibold mb-4">Booking</h4>
+          <p class="text-slate-400">Makeup & academy enquiries</p>
+          <p class="text-slate-400">Call / WhatsApp</p>
+          <div class="flex flex-wrap gap-3 mt-4">
+            <a href="tel:07467043026" class="px-5 py-3 bg-white text-slate-900 rounded-full font-semibold">Call Now</a>
+            <a href="https://wa.me/917467043026" target="_blank" class="px-5 py-3 rounded-full btn-primary font-semibold">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-800 mt-10 pt-6 text-center text-slate-500 text-sm">
+        © 2026 Makeup Soft Salon | Academy in Agra By Shivani. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/917467043026" target="_blank" class="floating-wa fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full bg-green-500 text-white flex items-center justify-center text-3xl shadow-2xl pulse-ring" aria-label="Book on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <div class="mobile-bar">
+    <a href="tel:07467043026" class="btn-dark"><i class="fa-solid fa-phone mr-2"></i>Call</a>
+    <a href="https://wa.me/917467043026" target="_blank" class="btn-primary"><i class="fa-brands fa-whatsapp mr-2"></i>WhatsApp</a>
+  </div>
+
+  <script>
+    const progress = document.getElementById('progress');
+    const nav = document.getElementById('nav');
+
+    function updateScroll(){
+      const top = window.scrollY || document.documentElement.scrollTop;
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = total > 0 ? (top / total) * 100 : 0;
+      progress.style.width = pct + '%';
+      nav.style.boxShadow = top > 14 ? '0 14px 42px rgba(175,88,116,.13)' : 'none';
+    }
+
+    window.addEventListener('scroll', updateScroll, {passive:true});
+    updateScroll();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:.12});
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
